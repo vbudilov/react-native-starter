@@ -126,6 +126,8 @@ export default class ForgotPasswordScreen extends Component {
                     </Right>
                 </Header>
                 <Content padder>
+                    <KeyboardAvoidingView behavior={'padding'}>
+
                     {!this.state.passwordReset &&
 
                     <Text style={{fontSize: 25, marginTop: 20}}>
@@ -177,7 +179,7 @@ export default class ForgotPasswordScreen extends Component {
                                    value={this.state.code}
                         />
                     </Item>}
-
+                    </KeyboardAvoidingView>
                 </Content>
                 <Content style={{position: "absolute", width: "100%", bottom: 0, alignSelf: "center"}}>
                     {!this.state.passwordReset && <Button full light style={{height: 50}}
@@ -191,7 +193,6 @@ export default class ForgotPasswordScreen extends Component {
                     </Button>}
                 </Content>
 
-                <KeyboardAvoidingView behavior={'padding'}/>
                 <DropdownAlert ref={ref => this.dropdown = ref}/>
             </Container>
 

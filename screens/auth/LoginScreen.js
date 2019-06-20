@@ -139,7 +139,6 @@ export default class LoginScreen extends Component {
                         <Text>LOGIN</Text>
                     </Button>
                 </Content>
-                {/*<KeyboardAvoidingView behavior={'padding'}/>*/}
                 <DropdownAlert ref={ref => this.dropdown = ref}/>
 
             </Container>

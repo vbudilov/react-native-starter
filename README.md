@@ -10,6 +10,7 @@ After reinventing the wheel a bunch of times I decided to create a fairly good-l
 
 ```
 yarn install
+react-native run-android
 ```
 
 

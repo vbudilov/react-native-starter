@@ -83,6 +83,8 @@ export default class RegisterConfirmScreen extends Component {
                     </Right>
                 </Header>
                 <Content padder>
+                    <KeyboardAvoidingView behavior={'padding'}>
+
                     <Text style={{fontSize: 25, marginTop: 20}}>
                         Confirm your registration (code was emailed)
                     </Text>
@@ -109,6 +111,7 @@ export default class RegisterConfirmScreen extends Component {
                                    value={this.state.confirmationCode}
                         />
                     </Item>
+                    </KeyboardAvoidingView>
                 </Content>
                 <Content style={{position: "absolute", width: "100%", bottom: 0, alignSelf: "center"}}>
                     <Button full light style={{height: 50}}
@@ -116,7 +119,6 @@ export default class RegisterConfirmScreen extends Component {
                         <Text>Confirm</Text>
                     </Button>
                 </Content>
-                <KeyboardAvoidingView behavior={'padding'}/>
                 <DropdownAlert ref={ref => this.dropdown = ref}/>
             </Container>
         );
