@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Container, Content, Header, Icon, Item, Left, Right, Text} from 'native-base';
-import {KeyboardAvoidingView, TextInput} from "react-native";
+import {TextInput} from "react-native";
 import validator from 'validator';
 import DropdownAlert from 'react-native-dropdownalert';
 import {Logger} from '@aws-amplify/core';
@@ -42,8 +42,8 @@ export default class RegisterUsernameScreen extends React.Component {
                         {/*</Button>*/}
                     </Right>
                 </Header>
+
                 <Content padder>
-                    <KeyboardAvoidingView behavior={'padding'}>
 
                     <Text style={{fontSize: 30, marginTop: 20}}>
                         What's your email?
@@ -55,14 +55,12 @@ export default class RegisterUsernameScreen extends React.Component {
                                    ref={(input) => this.username = input}
                                    value={this.state.username}/>
                     </Item>
-                    </KeyboardAvoidingView>
-                </Content>
-                <Content style={{position: "absolute", width: "100%", bottom: 0, alignSelf: "center"}}>
                     <Button full light style={{height: 50}}
                             onPress={() => this.next({username: this.state.username})}>
                         <Text>Next</Text>
                     </Button>
                 </Content>
+
                 <DropdownAlert ref={ref => this.dropdown = ref}/>
             </Container>
         );

@@ -85,21 +85,21 @@ export default class LoginScreen extends Component {
         return (
 
 
-            <Container>
-                <Header transparent>
-                    <Left>
-                        <Button transparent onPress={() => navigate('Main')}>
-                            <Icon style={{color: "#0f0007"}} name="arrow-back"/>
-                        </Button>
-                    </Left>
-                    <Right>
-                        {/*<Button transparent>*/}
-                        {/*    <Text  style={{color: "#0f0007"}}>Cancel</Text>*/}
-                        {/*</Button>*/}
-                    </Right>
-                </Header>
-                <Content padder>
-                    <KeyboardAvoidingView behavior={'padding'}>
+                <Container>
+                    <Header transparent>
+                        <Left>
+                            <Button transparent onPress={() => navigate('Main')}>
+                                <Icon style={{color: "#0f0007"}} name="arrow-back"/>
+                            </Button>
+                        </Left>
+                        <Right>
+                            {/*<Button transparent>*/}
+                            {/*    <Text  style={{color: "#0f0007"}}>Cancel</Text>*/}
+                            {/*</Button>*/}
+                        </Right>
+                    </Header>
+
+                    <Content padder>
                         <Text style={{fontSize: 25, marginTop: 20}}>
                             Please login
                         </Text>
@@ -129,19 +129,14 @@ export default class LoginScreen extends Component {
                         <Button transparent onPress={() => navigate('ForgotPassword')}>
                             <Text>Forgot Password</Text>
                         </Button>
-                    </KeyboardAvoidingView>
+                        <Button full light style={{height: 50}}
+                                onPress={() => this.login()}>
+                            <Text>LOGIN</Text>
+                        </Button>
+                    </Content>
+                    <DropdownAlert ref={ref => this.dropdown = ref}/>
 
-                </Content>
-
-                <Content style={{position: "absolute", width: "100%", bottom: 0, alignSelf: "center"}}>
-                    <Button full light style={{height: 50}}
-                            onPress={() => this.login()}>
-                        <Text>LOGIN</Text>
-                    </Button>
-                </Content>
-                <DropdownAlert ref={ref => this.dropdown = ref}/>
-
-            </Container>
+                </Container>
 
         );
     }

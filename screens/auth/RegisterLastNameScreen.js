@@ -27,32 +27,32 @@ export default class RegisterUsernameScreen extends React.Component {
                         {/*</Button>*/}
                     </Right>
                 </Header>
-                <Content padder>
-                    <KeyboardAvoidingView behavior={'padding'}>
 
-                    <Text style={{fontSize: 30, marginTop: 20}}>
-                        What's your last name?
-                    </Text>
-                    <Item style={{marginTop: 20}}>
-                        <TextInput style={authStyle.textInput}
-                                   placeholder="last name"
-                                   onChangeText={(text) => this.setState({lastName: text})}
-                                   ref={(input) => this.lastName = input}
-                                   value={this.state.lastName}/>
-                    </Item>
-                    </KeyboardAvoidingView>
-                </Content>
-                <Content style={{position: "absolute", width: "100%", bottom: 0, alignSelf: "center"}}>
-                    <Button full light style={{height: 50}}
-                            onPress={() => navigate('RegisterDOB', {
-                                username: this.state.username,
-                                password: this.state.password,
-                                firstName: this.state.firstName,
-                                lastName: this.state.lastName
-                            })}>
-                        <Text>Next</Text>
-                    </Button>
-                </Content>
+                    <Content padder>
+
+                        <Text style={{fontSize: 30, marginTop: 20}}>
+                            What's your last name?
+                        </Text>
+                        <Item style={{marginTop: 20}}>
+                            <TextInput style={authStyle.textInput}
+                                       placeholder="last name"
+                                       onChangeText={(text) => this.setState({lastName: text})}
+                                       ref={(input) => this.lastName = input}
+                                       value={this.state.lastName}/>
+                        </Item>
+
+                        <Button full light style={{height: 50}}
+                                onPress={() => navigate('RegisterDOB', {
+                                    username: this.state.username,
+                                    password: this.state.password,
+                                    firstName: this.state.firstName,
+                                    lastName: this.state.lastName
+                                })}>
+                            <Text>Next</Text>
+                        </Button>
+
+                    </Content>
+
                 <DropdownAlert ref={ref => this.dropdown = ref}/>
             </Container>
         );

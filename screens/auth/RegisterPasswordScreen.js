@@ -78,33 +78,31 @@ export default class RegisterUsernameScreen extends React.Component {
                         {/*</Button>*/}
                     </Right>
                 </Header>
-                <Content padder>
-                    <KeyboardAvoidingView behavior={'padding'}>
 
-                    <Text style={{fontSize: 30, marginTop: 20}}>
-                        What's your password?
-                    </Text>
-                    <Item style={{marginTop: 20}}>
-                        <TextInput style={authStyle.textInput}
-                                   placeholder="password"
-                                   type={"password"}
-                                   onChangeText={(text) => this.setState({password: text})}
-                                   ref={(input) => this.passwordInput = input}
-                                   secureTextEntry
-                                   value={this.state.password}
-                        />
-                    </Item>
-                    </KeyboardAvoidingView>
-                </Content>
-                <Content style={{position: "absolute", width: "100%", bottom: 0, alignSelf: "center"}}>
-                    <Button full light style={{height: 50}}
-                            onPress={() => this.signUp({
-                                username: this.state.username,
-                                password: this.state.password
-                            })}>
-                        <Text>Register</Text>
-                    </Button>
-                </Content>
+                    <Content padder>
+
+                        <Text style={{fontSize: 30, marginTop: 20}}>
+                            What's your password?
+                        </Text>
+                        <Item style={{marginTop: 20}}>
+                            <TextInput style={authStyle.textInput}
+                                       placeholder="password"
+                                       type={"password"}
+                                       onChangeText={(text) => this.setState({password: text})}
+                                       ref={(input) => this.passwordInput = input}
+                                       secureTextEntry
+                                       value={this.state.password}
+                            />
+                        </Item>
+                        <Button full light style={{height: 50}}
+                                onPress={() => this.signUp({
+                                    username: this.state.username,
+                                    password: this.state.password
+                                })}>
+                            <Text>Register</Text>
+                        </Button>
+                    </Content>
+
                 <DropdownAlert ref={ref => this.dropdown = ref}/>
             </Container>
         );

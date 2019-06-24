@@ -27,8 +27,8 @@ export default class RegisterUsernameScreen extends React.Component {
                         {/*</Button>*/}
                     </Right>
                 </Header>
+
                 <Content padder>
-                    <KeyboardAvoidingView behavior={'padding'}>
 
                     <Text style={{fontSize: 30, marginTop: 20}}>
                         What's your first name?
@@ -40,18 +40,16 @@ export default class RegisterUsernameScreen extends React.Component {
                                    ref={(input) => this.firstName = input}
                                    value={this.state.firstName}/>
                     </Item>
-                    </KeyboardAvoidingView>
+                        <Button full light style={{height: 50}}
+                                onPress={() => navigate('RegisterLN', {
+                                    username: this.state.username,
+                                    password: this.state.password,
+                                    firstName: this.state.firstName
+                                })}>
+                            <Text>Next</Text>
+                        </Button>
                 </Content>
-                <Content style={{position: "absolute", width: "100%", bottom: 0, alignSelf: "center"}}>
-                    <Button full light style={{height: 50}}
-                            onPress={() => navigate('RegisterLN', {
-                                username: this.state.username,
-                                password: this.state.password,
-                                firstName: this.state.firstName
-                            })}>
-                        <Text>Next</Text>
-                    </Button>
-                </Content>
+
                 <DropdownAlert ref={ref => this.dropdown = ref}/>
             </Container>
         );
