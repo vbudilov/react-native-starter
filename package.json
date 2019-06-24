@@ -16,14 +16,13 @@
     "aws-amplify-react-native": "2.1.13",
     "emoji-utils": "1.0.1",
     "moment": "2.24.0",
-    "native-base": "2.12.1",
-    "react": "16.5.0",
-    "react-apollo": "2.3.2",
-    "react-native": "0.57.1",
+    "native-base": "2.5.3-0",
+    "react": "16.8.6",
+    "react-native": "0.59.9",
     "react-native-dropdownalert": "3.10.0",
     "react-native-gesture-handler": "1.0.5",
     "react-native-vector-icons": "6.5.0",
-    "react-navigation": "3.8.1",
+    "react-navigation": "3.11.0",
     "validator": "10.11.0"
   },
   "devDependencies": {
