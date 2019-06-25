@@ -10,13 +10,13 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "@babel/runtime": "7.4.5",
     "@aws-amplify/auth": "1.2.25",
     "@aws-amplify/core": "1.0.28",
+    "@babel/runtime": "7.4.5",
     "aws-amplify-react-native": "2.1.13",
     "emoji-utils": "1.0.1",
     "moment": "2.24.0",
-    "native-base": "2.5.3-0",
+    "native-base": "2.12.1",
     "react": "16.8.6",
     "react-native": "0.59.9",
     "react-native-dropdownalert": "3.10.0",
@@ -26,8 +26,8 @@
     "validator": "10.11.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "5.0.0",
-    "jest": "^24.8.0"
+    "jest": "^24.8.0",
+    "metro-react-native-babel-preset": "0.54.1"
   },
   "private": true
 }
