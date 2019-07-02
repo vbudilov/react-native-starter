@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/secure/home/HomeScreen';
 import SettingsScreen from '../screens/secure/settings/SettingsScreen';
 
+// Home Tab
 const HomeStack = createStackNavigator({
     Home: HomeScreen,
 });
@@ -23,6 +24,7 @@ HomeStack.navigationOptions = {
     ),
 };
 
+// Settings Tab
 const SettingsStack = createStackNavigator({
     Settings: SettingsScreen,
 });
