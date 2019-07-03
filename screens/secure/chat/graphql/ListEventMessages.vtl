@@ -1,0 +1,23 @@
+{
+    "version" : "2017-02-28",
+    "operation" : "Query",
+    "scanIndexForward": false,
+    "query" : {
+        ## Provide a query expression. **
+        "expression": "eventId = :id and sortKey begins_with(:messageId)",
+        "expressionValues" : {
+            ":id" : {
+                "S" : "${ctx.args.eventId}"
+            },
+            ":messageId" : {
+            	"S" : "message_"
+            }
+        }
+    },
+    ## Add 'limit' and 'nextToken' arguments to this field in your schema to implement pagination. **
+    "limit": $util.defaultIfNull(${ctx.args.limit}, 20),
+    "nextToken": $util.toJson($util.defaultIfNullOrBlank($ctx.args.nextToken, null))
+}
+
+
+$util.toJson($context.result)

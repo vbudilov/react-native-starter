@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {KeyboardAvoidingView, TextInput} from 'react-native';
+import {TextInput} from 'react-native';
 import {Button, Container, Content, Header, Icon, Item, Left, Right, Text} from 'native-base';
 import Auth from '@aws-amplify/auth';
 import {Logger} from '@aws-amplify/core';
@@ -85,58 +85,58 @@ export default class LoginScreen extends Component {
         return (
 
 
-                <Container>
-                    <Header transparent>
-                        <Left>
-                            <Button transparent onPress={() => navigate('Main')}>
-                                <Icon style={{color: "#0f0007"}} name="arrow-back"/>
-                            </Button>
-                        </Left>
-                        <Right>
-                            {/*<Button transparent>*/}
-                            {/*    <Text  style={{color: "#0f0007"}}>Cancel</Text>*/}
-                            {/*</Button>*/}
-                        </Right>
-                    </Header>
-
-                    <Content padder>
-                        <Text style={{fontSize: 25, marginTop: 20}}>
-                            Please login
-                        </Text>
-                        <Item style={{marginTop: 20}}>
-                            <TextInput style={authStyle.textInput}
-                                       onChangeText={(text) => this.setState({username: text})}
-                                       autoCapitalize="none"
-                                       onSubmitEditing={() => this.passwordInput.focus()}
-                                       autoCorrect={false}
-                                       underlineColorAndroid='transparent'
-                                       keyboardType='email-address'
-                                       returnKeyType="next"
-                                       placeholder='email'
-                                       value={this.state.username}
-                            />
-                        </Item>
-                        <Item style={{marginTop: 20}}>
-                            <TextInput style={authStyle.textInput}
-                                       placeholder="password"
-                                       type={"password"}
-                                       onChangeText={(text) => this.setState({password: text})}
-                                       ref={(input) => this.passwordInput = input}
-                                       secureTextEntry
-                                       value={this.state.password}
-                            />
-                        </Item>
-                        <Button transparent onPress={() => navigate('ForgotPassword')}>
-                            <Text>Forgot Password</Text>
+            <Container>
+                <Header transparent>
+                    <Left>
+                        <Button transparent onPress={() => navigate('Main')}>
+                            <Icon style={{color: "#0f0007"}} name="arrow-back"/>
                         </Button>
-                        <Button full light style={{height: 50}}
-                                onPress={() => this.login()}>
-                            <Text>LOGIN</Text>
-                        </Button>
-                    </Content>
-                    <DropdownAlert ref={ref => this.dropdown = ref}/>
+                    </Left>
+                    <Right>
+                        {/*<Button transparent>*/}
+                        {/*    <Text  style={{color: "#0f0007"}}>Cancel</Text>*/}
+                        {/*</Button>*/}
+                    </Right>
+                </Header>
 
-                </Container>
+                <Content padder>
+                    <Text style={{fontSize: 25, marginTop: 20}}>
+                        Please login
+                    </Text>
+                    <Item style={{marginTop: 20}}>
+                        <TextInput style={authStyle.textInput}
+                                   onChangeText={(text) => this.setState({username: text})}
+                                   autoCapitalize="none"
+                                   onSubmitEditing={() => this.passwordInput.focus()}
+                                   autoCorrect={false}
+                                   underlineColorAndroid='transparent'
+                                   keyboardType='email-address'
+                                   returnKeyType="next"
+                                   placeholder='email'
+                                   value={this.state.username}
+                        />
+                    </Item>
+                    <Item style={{marginTop: 20}}>
+                        <TextInput style={authStyle.textInput}
+                                   placeholder="password"
+                                   type={"password"}
+                                   onChangeText={(text) => this.setState({password: text})}
+                                   ref={(input) => this.passwordInput = input}
+                                   secureTextEntry
+                                   value={this.state.password}
+                        />
+                    </Item>
+                    <Button transparent onPress={() => navigate('ForgotPassword')}>
+                        <Text>Forgot Password</Text>
+                    </Button>
+                    <Button full light style={{height: 50}}
+                            onPress={() => this.login()}>
+                        <Text>LOGIN</Text>
+                    </Button>
+                </Content>
+                <DropdownAlert ref={ref => this.dropdown = ref}/>
+
+            </Container>
 
         );
     }

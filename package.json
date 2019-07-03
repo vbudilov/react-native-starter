@@ -17,16 +17,19 @@
     "emoji-utils": "1.0.1",
     "moment": "2.24.0",
     "native-base": "2.12.1",
+    "prop-types": "^15.7.2",
     "react": "16.8.6",
     "react-native": "0.59.9",
     "react-native-dropdownalert": "3.10.0",
     "react-native-gesture-handler": "1.0.5",
+    "react-native-gifted-chat": "^0.9.11",
     "react-native-vector-icons": "6.5.0",
     "react-navigation": "3.11.0",
     "validator": "10.11.0"
   },
   "devDependencies": {
     "jest": "^24.8.0",
+    "jetifier": "^1.6.1",
     "metro-react-native-babel-preset": "0.54.1"
   },
   "private": true

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {KeyboardAvoidingView, TextInput} from 'react-native';
+import {TextInput} from 'react-native';
 import {Button, Container, Content, Header, Icon, Item, Left, Right, Text} from 'native-base';
 import Auth from '@aws-amplify/auth';
 import {Logger} from '@aws-amplify/core';
@@ -126,69 +126,69 @@ export default class ForgotPasswordScreen extends Component {
                     </Right>
                 </Header>
 
-                    <Content padder>
+                <Content padder>
 
-                        {!this.state.passwordReset &&
+                    {!this.state.passwordReset &&
 
-                        <Text style={{fontSize: 25, marginTop: 20}}>
-                            Enter your email
-                        </Text>}
-                        {this.state.passwordReset &&
+                    <Text style={{fontSize: 25, marginTop: 20}}>
+                        Enter your email
+                    </Text>}
+                    {this.state.passwordReset &&
 
-                        <Text style={{fontSize: 25, marginTop: 20}}>
-                            Enter new password
-                        </Text>}
+                    <Text style={{fontSize: 25, marginTop: 20}}>
+                        Enter new password
+                    </Text>}
 
-                        <Item style={{marginTop: 20}}>
-                            <TextInput style={authStyle.textInput}
-                                       onChangeText={(text) => this.setState({username: text})}
-                                       autoCapitalize="none"
-                                       autoCorrect={false}
-                                       underlineColorAndroid='transparent'
-                                       keyboardType='email-address'
-                                       returnKeyType="next"
-                                       placeholder='email'
-                                       value={this.state.username}
-                            />
-                        </Item>
+                    <Item style={{marginTop: 20}}>
+                        <TextInput style={authStyle.textInput}
+                                   onChangeText={(text) => this.setState({username: text})}
+                                   autoCapitalize="none"
+                                   autoCorrect={false}
+                                   underlineColorAndroid='transparent'
+                                   keyboardType='email-address'
+                                   returnKeyType="next"
+                                   placeholder='email'
+                                   value={this.state.username}
+                        />
+                    </Item>
 
-                        {this.state.passwordReset &&
+                    {this.state.passwordReset &&
 
-                        <Item style={{marginTop: 20}}>
-                            <TextInput style={authStyle.textInput}
-                                       placeholder="password"
-                                       type={"password"}
-                                       onChangeText={(text) => this.setState({password: text})}
-                                       ref={(input) => this.passwordInput = input}
-                                       secureTextEntry
-                                       value={this.state.password}
-                            />
-                        </Item>}
+                    <Item style={{marginTop: 20}}>
+                        <TextInput style={authStyle.textInput}
+                                   placeholder="password"
+                                   type={"password"}
+                                   onChangeText={(text) => this.setState({password: text})}
+                                   ref={(input) => this.passwordInput = input}
+                                   secureTextEntry
+                                   value={this.state.password}
+                        />
+                    </Item>}
 
-                        {this.state.passwordReset &&
+                    {this.state.passwordReset &&
 
-                        <Item style={{marginTop: 20}}>
-                            <TextInput style={authStyle.textInput}
-                                       onChangeText={(text) => this.setState({code: text})}
-                                       autoCapitalize="none"
-                                       autoCorrect={false}
-                                       underlineColorAndroid='transparent'
-                                       keyboardType='numeric'
-                                       returnKeyType="next"
-                                       placeholder='code'
-                                       value={this.state.code}
-                            />
-                        </Item>}
-                        {!this.state.passwordReset && <Button full light style={{height: 50}}
-                                                              onPress={() => this.sendResetCode()}>
-                            <Text>SEND CODE</Text>
-                        </Button>}
+                    <Item style={{marginTop: 20}}>
+                        <TextInput style={authStyle.textInput}
+                                   onChangeText={(text) => this.setState({code: text})}
+                                   autoCapitalize="none"
+                                   autoCorrect={false}
+                                   underlineColorAndroid='transparent'
+                                   keyboardType='numeric'
+                                   returnKeyType="next"
+                                   placeholder='code'
+                                   value={this.state.code}
+                        />
+                    </Item>}
+                    {!this.state.passwordReset && <Button full light style={{height: 50}}
+                                                          onPress={() => this.sendResetCode()}>
+                        <Text>SEND CODE</Text>
+                    </Button>}
 
-                        {this.state.passwordReset && <Button full light style={{height: 50}}
-                                                             onPress={() => this.resetPassword()}>
-                            <Text>RESET PASSWORD</Text>
-                        </Button>}
-                    </Content>
+                    {this.state.passwordReset && <Button full light style={{height: 50}}
+                                                         onPress={() => this.resetPassword()}>
+                        <Text>RESET PASSWORD</Text>
+                    </Button>}
+                </Content>
 
                 <DropdownAlert ref={ref => this.dropdown = ref}/>
             </Container>

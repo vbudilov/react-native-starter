@@ -1,0 +1,15 @@
+{
+  "version": "2017-02-28",
+  "operation": "PutItem",
+  "key": {
+    "eventId": $util.dynamodb.toDynamoDBJson($ctx.args.input.eventId),
+    "sortKey": $util.dynamodb.toDynamoDBJson("message_$util.time.nowISO8601()_$util.autoId()"),
+  },
+  "attributeValues": {
+	"message": $util.dynamodb.toDynamoDBJson($ctx.args.input.message),
+	"createdDate": $util.dynamodb.toDynamoDBJson($util.time.nowISO8601()),
+	"userId": $util.dynamodb.toDynamoDBJson(${context.identity.sub})
+  }
+}
+
+$util.toJson($context.result)

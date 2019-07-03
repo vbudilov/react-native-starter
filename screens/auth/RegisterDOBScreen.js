@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Container, Content, Header, Icon, Item, Left, Right, Text} from 'native-base';
-import {KeyboardAvoidingView, TextInput} from "react-native";
+import {TextInput} from "react-native";
 import {authStyle} from "./style";
 import DropdownAlert from "react-native-dropdownalert";
 
@@ -32,23 +32,23 @@ export default class RegisterUsernameScreen extends React.Component {
                     </Right>
                 </Header>
 
-                    <Content padder>
+                <Content padder>
 
-                        <Text style={{fontSize: 30, marginTop: 20}}>
-                            What's your date of birth?
-                        </Text>
-                        <Item style={{marginTop: 20}}>
-                            <TextInput style={authStyle.textInput}
-                                       placeholder="date of birth"
-                                       onChangeText={(text) => this.setState({dob: text})}
-                                       ref={(input) => this.dob = input}
-                                       value={this.state.dob}/>
-                        </Item>
-                        <Button full light style={{height: 50}}
-                                onPress={() => this.register()}>
-                            <Text>REGISTER</Text>
-                        </Button>
-                    </Content>
+                    <Text style={{fontSize: 30, marginTop: 20}}>
+                        What's your date of birth?
+                    </Text>
+                    <Item style={{marginTop: 20}}>
+                        <TextInput style={authStyle.textInput}
+                                   placeholder="date of birth"
+                                   onChangeText={(text) => this.setState({dob: text})}
+                                   ref={(input) => this.dob = input}
+                                   value={this.state.dob}/>
+                    </Item>
+                    <Button full light style={{height: 50}}
+                            onPress={() => this.register()}>
+                        <Text>REGISTER</Text>
+                    </Button>
+                </Content>
 
                 <DropdownAlert ref={ref => this.dropdown = ref}/>
             </Container>

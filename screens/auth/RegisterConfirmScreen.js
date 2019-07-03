@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {KeyboardAvoidingView, TextInput} from 'react-native';
+import {TextInput} from 'react-native';
 import {Button, Container, Content, Header, Icon, Item, Left, Right, Text} from 'native-base';
 import Auth from '@aws-amplify/auth';
 import {Logger} from '@aws-amplify/core';
@@ -112,10 +112,10 @@ export default class RegisterConfirmScreen extends Component {
                         />
                     </Item>
 
-                        <Button full light style={{height: 50}}
-                                onPress={() => this.confirmSignUp()}>
-                            <Text>Confirm</Text>
-                        </Button>
+                    <Button full light style={{height: 50}}
+                            onPress={() => this.confirmSignUp()}>
+                        <Text>Confirm</Text>
+                    </Button>
                 </Content>
 
                 <DropdownAlert ref={ref => this.dropdown = ref}/>

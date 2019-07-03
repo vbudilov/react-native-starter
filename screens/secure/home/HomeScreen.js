@@ -1,6 +1,6 @@
 import React from 'react';
 import {Platform, StyleSheet, Text} from 'react-native';
-import {Container, Content} from "native-base";
+import {Container, Content, Left, Body, Title, Right , Button, Icon, Header} from "native-base";
 import {mainStyle} from "../../../common/style";
 
 export default class HomeScreen extends React.Component {
@@ -34,9 +34,15 @@ export default class HomeScreen extends React.Component {
     render() {
         return (
             <Container>
-                <Content contentContainerStyle={mainStyle.content}>
-                    <Text style={{marginBottom: 10, marginTop: 15, marginLeft: 10, fontSize: 20}}>Welcome Home</Text>
-                </Content>
+                <Header>
+                    <Left>
+
+                    </Left>
+                    <Body>
+                        <Title>Home</Title>
+                    </Body>
+
+                </Header>
             </Container>
         );
     }

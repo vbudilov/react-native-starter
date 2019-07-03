@@ -1,6 +1,6 @@
 import React from 'react';
 import {KeyboardAvoidingView, StyleSheet, Text} from 'react-native';
-import {Body, Button, Container, Content, Icon, Left, ListItem, Right} from "native-base";
+import {Body, Button, Container, Content, Header, Icon, Left, ListItem, Right, Title} from "native-base";
 
 import Auth from '@aws-amplify/auth';
 import {Logger} from '@aws-amplify/core';
@@ -62,8 +62,16 @@ export default class SettingsScreen extends React.Component {
         return (
             <KeyboardAvoidingView behavior="padding" style={{flex: 1, backgroundColor: '#fff'}}>
 
-                <Container style={styles.scroll}>
-                    {/*<Header/>*/}
+                <Container  style={styles.scroll}>
+                    <Header>
+                        <Left>
+
+                        </Left>
+                        <Body>
+                            <Title>Settings</Title>
+                        </Body>
+
+                    </Header>
                     <Content>
 
                         <ListItem icon onPress={() => this.onLogOut()}>

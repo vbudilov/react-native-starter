@@ -1,6 +1,6 @@
 import React from 'react';
 import {Button, Container, Content, Header, Icon, Item, Left, Right, Text} from 'native-base';
-import {KeyboardAvoidingView, TextInput} from "react-native";
+import {TextInput} from "react-native";
 import {authStyle} from "./style";
 import DropdownAlert from "react-native-dropdownalert";
 
@@ -40,14 +40,14 @@ export default class RegisterUsernameScreen extends React.Component {
                                    ref={(input) => this.firstName = input}
                                    value={this.state.firstName}/>
                     </Item>
-                        <Button full light style={{height: 50}}
-                                onPress={() => navigate('RegisterLN', {
-                                    username: this.state.username,
-                                    password: this.state.password,
-                                    firstName: this.state.firstName
-                                })}>
-                            <Text>Next</Text>
-                        </Button>
+                    <Button full light style={{height: 50}}
+                            onPress={() => navigate('RegisterLN', {
+                                username: this.state.username,
+                                password: this.state.password,
+                                firstName: this.state.firstName
+                            })}>
+                        <Text>Next</Text>
+                    </Button>
                 </Content>
 
                 <DropdownAlert ref={ref => this.dropdown = ref}/>

@@ -24,7 +24,8 @@ export default createAppContainer(createSwitchNavigator({
         RegisterLN: RegisterLastNameScreen,
         RegisterDOB: RegisterDOBScreen,
         RegisterConfirm: RegisterConfirmScreen,
-        Secure: MainTabNavigator
+        // Tab Home Page once logged-in
+        Secure: MainTabNavigator,
     },
     {
         navigationOptions: {
