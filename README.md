@@ -15,8 +15,9 @@ react-native run-android
 
 ### Screenshots
 
-![React Native Login/Register Landing Page](meta/images/landing-page.png?raw=true "Title")
-![React Native Login Page](meta/images/login-screen.png?raw=true "Title")
+![React Native Login/Register Landing Page](meta/images/landing-page.png?raw=true "Landing")
+![React Native Login Page](meta/images/login-screen.png?raw=true "Login")
+![React Native Login Page](meta/images/secure-home.png?raw=true "Secure home")
 
 ### Tech stack/Frameworks/Services:
 
