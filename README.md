@@ -43,3 +43,12 @@ Found in /constants/amplify-config.js
 
 
 ##### The next step is to include a fully-functioning chat functionality with AWS Amplify and AWS AppSync. That's in the works. 
+
+Note: if you encounter the following error when running ```react-native run-android```
+
+```error spawnSync ./gradlew EACCES. Run CLI with --verbose flag for more details.```
+
+you need to change the permissions on your gradlew file: 
+
+```chmod 755 android/gradlew ```
+
